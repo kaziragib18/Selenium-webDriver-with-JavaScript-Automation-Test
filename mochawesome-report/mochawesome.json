@@ -1,0 +1,163 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 3,
+    "passes": 2,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-03-21T14:24:14.195Z",
+    "end": "2022-03-21T14:24:53.223Z",
+    "duration": 39028,
+    "testsRegistered": 3,
+    "passPercent": 66.66666666666666,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9229d13c-6d27-4102-a5b1-8c0fc47aa3d3",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6533b0ad-c176-4db3-89dd-c951cf4bb84d",
+          "title": "add to tests",
+          "fullFile": "H:\\SKILL Development\\All Projects\\SQA\\seleniumDemo\\test\\firstTest.js",
+          "file": "\\test\\firstTest.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "successfull added a new todo",
+              "fullTitle": "add to tests successfull added a new todo",
+              "timedOut": null,
+              "duration": 22591,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//launch tthe browser\n  //create a brower instace for chrome\n  let driver = await new Builder().forBrowser(\"chrome\").build();\n  //navigate to our application\n  await driver.get(\"https://lambdatest.github.io/sample-todo-app/\")\n  //add a todo\n  await driver.findElement(By.id(\"sampletodotext\")).sendKeys(\"Learn Selenium\", Key.RETURN);\n  //assert\n \n  let todoText = await driver.findElement(By.xpath(\"//li[last()]\")).getText().then(function (value) {\n    return value\n  });\n  //assert using build in node assertion\n  // assert.strictEqual(todoText, \"Learn Selenium\");\n  //assert using chai using should style\n  todoText.should.equal(\"Learn Selenium\");\n  //close the browser\n  await driver.quit();",
+              "err": {},
+              "uuid": "1630d0c4-e86b-42c0-adab-50bf0968f018",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1630d0c4-e86b-42c0-adab-50bf0968f018"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 22591,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        },
+        {
+          "uuid": "d1a81bb9-014e-43af-b88b-0ddecbdd8f50",
+          "title": "add another add to tests",
+          "fullFile": "H:\\SKILL Development\\All Projects\\SQA\\seleniumDemo\\test\\secondTest.js",
+          "file": "\\test\\secondTest.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "successfully add another todo",
+              "fullTitle": "add another add to tests successfully add another todo",
+              "timedOut": null,
+              "duration": 22592,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//launch tthe browser\n    //create a brower instace for chrome\n    let driver = await new Builder().forBrowser(\"chrome\").build();\n    //navigate to our application\n    await driver.get(\"https://lambdatest.github.io/sample-todo-app/\")\n    //add a todo\n    await driver.findElement(By.id(\"sampletodotext\")).sendKeys(\"Learn Selenium\", Key.RETURN);\n    //assert\n    let todoText = await driver.findElement(By.xpath(\"//li[last()]\")).getText().then(function (value) {\n      return value\n    });\n    //assert using build in node assertion\n    // assert.strictEqual(todoText, \"Learn Selenium\");\n    //assert using chai using should style\n    todoText.should.equal(\"Learn Selenium\");\n    //close the browser\n    await driver.quit();",
+              "err": {},
+              "uuid": "3f62b16a-5a95-4214-ab36-1c4894643cd4",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Adding new test for reporting",
+              "fullTitle": "add another add to tests Adding new test for reporting",
+              "timedOut": null,
+              "duration": 12398,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//launch tthe browser\n    let driver = await new Builder().forBrowser(\"chrome\").build();\n    //navigate to our application\n    await driver.get(\"https://lambdatest.github.io/sample-todo-app/\")\n    //add a todo\n    await driver.findElement(By.id(\"sampletodotext\")).sendKeys(\"Learn JavaScript\", Key.RETURN);\n    //assert\n    let todoText = await driver.findElement(By.xpath(\"//li[last()]\")).getText().then(function (value) {\n      return value\n    });\n    //assert using build in node assertion\n    // assert.strictEqual(todoText, \"Learn Selenium\");\n    //assert using chai using should style\n    todoText.should.equal(\"Learn Selenium\");\n    //close the browser\n    await driver.quit();",
+              "err": {
+                "message": "AssertionError: expected 'Learn JavaScript' to equal 'Learn Selenium'",
+                "estack": "AssertionError: expected 'Learn JavaScript' to equal 'Learn Selenium'\n    at Context.<anonymous> (test\\secondTest.js:73:21)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)",
+                "diff": "- Learn JavaScript\n+ Learn Selenium\n"
+              },
+              "uuid": "3725fe7f-7588-4d6f-a8cc-51f9acac3d38",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3f62b16a-5a95-4214-ab36-1c4894643cd4"
+          ],
+          "failures": [
+            "3725fe7f-7588-4d6f-a8cc-51f9acac3d38"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 34990,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 0
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "9.2.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.2"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.1.1"
+    }
+  }
+}

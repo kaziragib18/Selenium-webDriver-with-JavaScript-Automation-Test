@@ -1,14 +1,19 @@
 //require nodemodules
 const { Builder, By, Key } = require("selenium-webdriver");
 
-// const assert = require("assert");
+// const assert = require("assert"); 
 
 const should = require('chai').should();
 
 
 //for running mocha test update package.json file
 //change test scripts to : "mocha --no-timeouts"
+//change test scripts for parallel if multiple tests: "mocha --no-timeouts --parallel mochawesome"
+//used another flag in test script to generate mochawesome report:  "mocha --no-timeouts --parallel --reporter"
+//register mochawesome as hook for running parallel test : "mocha --no-timeouts --parallel --reporter --require mochawesome/register"
+//For creating custom directory & fileName for mochawesome test report add flag: --reporter-options reportDir=testReport,reportFilename=testResult
 //then terminal use npm test
+
 
 //describe block
 
