@@ -21,7 +21,7 @@ const should = require('chai').should();
 describe("add to tests", function () {
 
   //it block
-  it("successfull added a new todo", async function () {
+  it("successfully added a new todo", async function () {
 
   //launch tthe browser
   //create a brower instace for chrome
