@@ -7,7 +7,6 @@ const ltCapabilities = require("../capabilities");
 
 const should = require('chai').should();
 
-
 //for running mocha test update package.json file
 //change test scripts to run parallel test: "mocha --no-timeouts --parallel"
 //then terminal use npm test
@@ -30,7 +29,7 @@ describe("add another new todo to tests", function () {
   // host 
   const GRID_HOST = "hub.lambdatest.com/wd/hub";
 
-  // URL: https://{username}:{accessKey}@hub.lambdatest.com/wd/hub
+  // gridUrl: https://{username}:{accessKey}@hub.lambdatest.com/wd/hub
   const gridUrl = 'https://' + USERNAME + ':' + KEY + '@' + GRID_HOST;
 
   //application url
@@ -39,6 +38,9 @@ describe("add another new todo to tests", function () {
   //create drive instace
   //beforeEach block inside describe will execute proior to every it block 
   beforeEach(function () {
+    //changed test name with it block title so t understand which test is currently running
+    ltCapabilities.capabilities["LT:Options"].name = this.currentTest.title;
+
     //Building drive instace
     driver = new Builder()
       .usingServer(gridUrl)
@@ -50,7 +52,6 @@ describe("add another new todo to tests", function () {
     //close browser
     await driver.quit();
   });
-
 
 
   //it block
@@ -78,12 +79,10 @@ describe("add another new todo to tests", function () {
     // assert.strictEqual(todoText, "Learn Selenium");
 
     //assert using chai using should style
-    todoText.should.equal("Learn Selenium");
+    todoText.should.equal("Learn JavaScript");
 
     //close the browser
     // await driver.quit();
-
-
 
   });
 
